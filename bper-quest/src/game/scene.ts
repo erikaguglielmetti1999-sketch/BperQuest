@@ -221,6 +221,26 @@ export class QuestScene extends Phaser.Scene {
             .setDepth(-1000 + x + y),
         );
       }
+    if (this.map.theme === "town") {
+      // Oval paving evokes the Anfiteatro without closing any escape route.
+      const paving = this.track(this.add.graphics().setDepth(-900));
+      for (let y = 290; y <= 496; y += 2) {
+        const span = 252 * Math.sqrt(Math.max(0, 1 - ((y - 393) / 103) ** 2));
+        paving
+          .fillStyle(0xc8ab84, 0.12)
+          .fillRect(Math.round(500 - span), y, Math.round(span * 2), 2);
+      }
+      for (let ring = 0; ring < 3; ring++) {
+        for (let step = 0; step < 220; step++) {
+          const angle = (step / 220) * Math.PI * 2;
+          const x = Math.round(500 + Math.cos(angle) * (252 - ring * 5));
+          const y = Math.round(393 + Math.sin(angle) * (103 - ring * 3));
+          paving
+            .fillStyle(ring === 1 ? 0xcbb69a : 0x9d9082, 0.9)
+            .fillRect(x, y, 4, 2);
+        }
+      }
+    }
     for (const prop of this.map.props) {
       const pos = {
         x: prop.x + (prop.w - 1) / 2,
@@ -241,7 +261,47 @@ export class QuestScene extends Phaser.Scene {
         image.setName("fountain-base").setDepth(-700);
         this.image(pos, "fountainSpout").setName("fountain-spout");
       }
-      if (prop.kind === "house") this.buildings.push(image);
+      if (prop.kind === "house") {
+        // Curve the distant facades backward, away from every playable street.
+        const across = (image.x - 500) / 380;
+        const arc = 345 - 150 * Math.sqrt(Math.max(0, 1 - across * across));
+        const oldBase = image.y;
+        const facadeBase = Math.round(Math.min(oldBase, arc));
+        const foundation = this.track(this.add.graphics().setDepth(-950));
+        foundation
+          .fillStyle([0x8f755e, 0x926b50, 0x855e50, 0x9c8061][prop.variant], 1)
+          .fillPoints(
+            [
+              new Phaser.Geom.Point(image.x - 44, facadeBase - 22),
+              new Phaser.Geom.Point(image.x, facadeBase - 44),
+              new Phaser.Geom.Point(image.x + 44, facadeBase - 22),
+              new Phaser.Geom.Point(image.x + 44, oldBase - 22),
+              new Phaser.Geom.Point(image.x, oldBase),
+              new Phaser.Geom.Point(image.x - 44, oldBase - 22),
+            ],
+            true,
+          );
+        for (let row = facadeBase + 2; row < oldBase - 16; row += 18) {
+          for (const dx of [-24, -8, 8, 24]) {
+            foundation
+              .fillStyle(0x473b38, 1)
+              .fillRect(image.x + dx - 4, row - 8, 8, 10);
+            foundation
+              .fillStyle(0xd5a56f, 1)
+              .fillRect(image.x + dx - 2, row - 6, 4, 6);
+            foundation
+              .fillStyle(0x695b47, 1)
+              .fillRect(image.x + dx - 5, row - 8, 1, 10);
+          }
+        }
+        image.setY(facadeBase).setDepth(Math.min(image.depth, arc));
+        this.buildings.push(image);
+      }
+      if (prop.kind === "autumntree" && this.map.theme === "park") {
+        this.image(pos, "rampart")
+          .setY(iso(pos.x, pos.y).y + 22)
+          .setDepth(image.depth - 0.1);
+      }
     }
     // Decorations stay outside navigable cells, never in an escape lane.
     for (const pos of [

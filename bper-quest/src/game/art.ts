@@ -505,6 +505,55 @@ export function makeArt(scene: Phaser.Scene) {
     rect(c, 6, 18, 8, 1, "#544c68");
     rect(c, 28, 23, 8, 1, "#453e5e");
   });
+  texture(scene, "rampart", 44, 31, (c) => {
+    poly(
+      c,
+      [
+        [0, 11],
+        [22, 0],
+        [44, 11],
+        [22, 22],
+      ],
+      "#9f9878",
+    );
+    poly(
+      c,
+      [
+        [0, 11],
+        [22, 22],
+        [22, 31],
+        [0, 20],
+      ],
+      "#ad7152",
+    );
+    poly(
+      c,
+      [
+        [22, 22],
+        [44, 11],
+        [44, 20],
+        [22, 31],
+      ],
+      "#79513f",
+    );
+    poly(
+      c,
+      [
+        [3, 11],
+        [22, 2],
+        [41, 11],
+        [22, 20],
+      ],
+      "#81896a",
+    );
+    for (let x = 2; x < 42; x += 6) {
+      const y = 14 + Math.min(x, 44 - x) * 0.5;
+      rect(c, x, y, 4, 1, x < 22 ? "#d39b70" : "#b9835d");
+      rect(c, x + 2, y + 4, 3, 1, x < 22 ? "#83503f" : "#5c3d34");
+    }
+    rect(c, 4, 9, 3, 3, "#c6bb91");
+    rect(c, 37, 9, 3, 3, "#b1a780");
+  });
   texture(scene, "pillar", 22, 26, (c) => {
     poly(
       c,
@@ -573,7 +622,7 @@ export function makeArt(scene: Phaser.Scene) {
         [44, 119],
         [12, 103],
       ],
-      "#9a8791",
+      "#b17755",
     );
     poly(
       c,
@@ -583,13 +632,13 @@ export function makeArt(scene: Phaser.Scene) {
         [76, 103],
         [44, 119],
       ],
-      "#665b7c",
+      "#784937",
     );
     for (let y = 48; y < 108; y += 6) {
-      rect(c, 14, y, 8, 1, "#75697f");
-      rect(c, 29, y + 7, 11, 1, "#b2a0a2");
-      rect(c, 49, y + 2, 10, 1, "#50445f");
-      rect(c, 65, y + 9, 8, 1, "#80708e");
+      rect(c, 14, y, 8, 1, "#88533e");
+      rect(c, 29, y + 7, 11, 1, "#cf9470");
+      rect(c, 49, y + 2, 10, 1, "#59352f");
+      rect(c, 65, y + 9, 8, 1, "#9a6148");
     }
     poly(
       c,
@@ -599,7 +648,7 @@ export function makeArt(scene: Phaser.Scene) {
         [80, 30],
         [44, 49],
       ],
-      "#b3a1a6",
+      "#c18c66",
     );
     poly(
       c,
@@ -611,27 +660,63 @@ export function makeArt(scene: Phaser.Scene) {
         [44, 55],
         [8, 36],
       ],
-      "#796b87",
+      "#855438",
     );
     for (let i = 0; i < 5; i++) {
       const x = 11 + i * 7;
-      rect(c, x, 28 + i * 3, 4, 8, "#bdacb2");
+      rect(c, x, 28 + i * 3, 4, 8, "#d5a57c");
       const xx = 47 + i * 7;
-      rect(c, xx, 43 - i * 4, 4, 8, "#887696");
+      rect(c, xx, 43 - i * 4, 4, 8, "#a7704e");
     }
-    rect(c, 32, 10, 24, 18, "#85728c");
+    // Guinigi's roof garden: a cluster of evergreen oaks on the terrace.
     poly(
       c,
       [
-        [28, 11],
-        [44, 0],
-        [60, 11],
-        [44, 23],
+        [16, 29],
+        [44, 15],
+        [72, 29],
+        [44, 43],
       ],
-      "#654361",
+      "#66543a",
     );
-    rect(c, 42, 13, 3, 9, "#e9b574");
-    rect(c, 45, 13, 1, 9, "#574160");
+    for (const [x, y] of [
+      [24, 16],
+      [42, 9],
+      [59, 17],
+      [36, 26],
+      [53, 29],
+    ]) {
+      rect(c, x - 1, y, 3, 13, "#6b4f35");
+      rect(c, x, y + 2, 1, 10, "#b38c57");
+      poly(
+        c,
+        [
+          [x - 10, y - 3],
+          [x - 8, y - 10],
+          [x - 3, y - 15],
+          [x + 4, y - 15],
+          [x + 10, y - 8],
+          [x + 9, y - 1],
+          [x + 3, y + 4],
+          [x - 5, y + 3],
+        ],
+        "#354d39",
+      );
+      poly(
+        c,
+        [
+          [x - 7, y - 5],
+          [x - 4, y - 12],
+          [x + 3, y - 12],
+          [x + 7, y - 7],
+          [x + 4, y - 2],
+          [x - 3, y],
+        ],
+        "#5c7044",
+      );
+      rect(c, x - 4, y - 8, 5, 2, "#8a9555");
+      rect(c, x + 3, y - 4, 3, 2, "#a4a363");
+    }
     for (const [x, y] of [
       [24, 46],
       [33, 66],
@@ -697,8 +782,8 @@ export function makeArt(scene: Phaser.Scene) {
   });
   for (let v = 0; v < 4; v++)
     texture(scene, `house${v}`, 44, 48, (c) => {
-      const front = ["#b9a5aa", "#c1a384", "#aaa0b5", "#b69aaa"][v],
-        side = ["#837086", "#8b7265", "#776780", "#856b82"][v];
+      const front = ["#d2b38c", "#cba073", "#bb8d77", "#d4bc9b"][v],
+        side = ["#98775c", "#926b50", "#855e50", "#9c8061"][v];
       poly(
         c,
         [
@@ -737,7 +822,7 @@ export function makeArt(scene: Phaser.Scene) {
           [22, 20],
           [22, 31],
         ],
-        ["#bd6c42", "#865773", "#ac7048", "#665172"][v],
+        ["#bd6c42", "#ad6948", "#ac7048", "#b17c56"][v],
       );
       poly(
         c,
@@ -746,7 +831,7 @@ export function makeArt(scene: Phaser.Scene) {
           [43, 20],
           [22, 31],
         ],
-        ["#81473b", "#5f3d62", "#7b4d3a", "#493750"][v],
+        ["#81473b", "#794638", "#7b4d3a", "#79543e"][v],
       );
       for (let i = 0; i < 7; i++) {
         rect(c, 5 + i * 2, 17 - i, 9, 1, "#db9965");

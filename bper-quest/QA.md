@@ -53,3 +53,11 @@ Palette viola/autunnale e luci arancio aggiornate. Vampiro a 3,8 celle/s, mostri
 ## Revisione 1.6.1
 
 21 test automatici, lint e build superati. Verifica browser completa superata, inclusa la profondità effettiva degli sprite Phaser di PG e mostri lungo tutti e quattro i lati della fontana. Base e ombre sono sotto i personaggi; il getto è un elemento distinto. Ispezione visiva con PG e tre mostri disposti lungo il bordo. Le collisioni della base 5×5 restano verificate da ogni lato.
+
+## Revisione 1.7
+
+21 test automatici superati; lint e build riusciti. Verifica browser completa sulla cartella attuale (server 5174), incluse tre mappe, dieci raccolte, timer, scudo, Game Over, vittoria e PNG. Ispezione visiva delle tre ambientazioni: piazza con facciate curve e pavimentazione ovale, mura con parapetti in mattoni, torre con alberi. Tutti i punti e passaggi restano raggiungibili; gli elementi di sfondo non coprono le celle percorribili. Preview di produzione sulla porta 4174 per evitare i vecchi server collegati a una cartella spostata.
+
+## Revisione 1.7.1
+
+Secondo livello con due fulmini e due scudi. 21 test, lint e build superati; raggiungibilità dei bonus e dei passaggi verificata. Ciclo browser completo superato e distribuzione dei quattro bonus ispezionata visivamente. Il fulmine aggiunto è separato dal primo oggetto dorato per renderli distinguibili.

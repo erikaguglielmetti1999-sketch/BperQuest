@@ -224,8 +224,8 @@ function App() {
               </h1>
               <p className="welcome">Benvenuto nella notte di Halloween!</p>
               <p className="intro-description">
-                Esplora città, parco e torre. Raccogli 10 tesori e sfuggi ai
-                mostriciattoli. Hai solo 3 vite: niente attacchi, conta sulla
+                Esplora Lucca: piazza, mura e torre. Raccogli 10 tesori e sfuggi
+                ai mostriciattoli. Hai solo 3 vite: niente attacchi, conta sulla
                 tua agilità.
               </p>
               <div className="instructions">

@@ -26,9 +26,9 @@ export const OBJECTS = [
   "Corona dorata",
 ];
 export const LEVEL_NAMES = [
-  "Piazza delle Zucche",
-  "Parco delle Lanterne",
-  "Torre della Mezzanotte",
+  "Piazza dell’Anfiteatro",
+  "Passeggiata sulle Mura",
+  "Torre Guinigi",
 ];
 export type Snapshot = {
   phase: Phase;

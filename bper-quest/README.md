@@ -125,3 +125,11 @@ Lo scudo assorbe un solo attacco e dura al massimo 10 secondi di gioco attivo. I
 ## Revisione 1.6.1 — fontana e ordine di rendering
 
 La vasca e la base sono renderizzate al livello del terreno; il getto rialzato è uno sprite separato. La base rimane interamente solida: PG e mostri devono aggirarla, senza essere coperti dal disegno della vasca quando sono accanto ai bordi.
+
+## Revisione 1.7 — richiami a Lucca
+
+Piazza dell’Anfiteatro: facciate curve e continue in toni di intonaco e terracotta, pavimentazione ovale. Passeggiata sulle Mura: parapetti in mattoni e viale alberato, mantenendo il parco e la fontana. Torre Guinigi: muratura calda e giardino di alberi sulla sommità. Questi elementi sono interpretazioni stilizzate; le sagome di sfondo restano fuori dalle vie percorribili e non usano trasparenza.
+
+## Revisione 1.7.1 — più bonus sulle mura
+
+Il secondo livello contiene quattro potenziamenti: due fulmini e due scudi, distribuiti su lati diversi della fontana. Restano validi gli effetti e le durate precedenti: +30% per 6 secondi e scudo per un colpo o massimo 10 secondi.

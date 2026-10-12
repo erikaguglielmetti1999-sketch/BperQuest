@@ -252,6 +252,7 @@ test("trees and the final tower never occlude navigable cells", () => {
     autumntree: { width: 88, height: 136 },
     hauntedtower: { width: 132, height: 189 },
     ruinwall: { width: 88, height: 62 },
+    rampart: { width: 88, height: 62 },
   };
   for (const map of levels)
     for (const prop of map.props) {

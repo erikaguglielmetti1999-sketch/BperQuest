@@ -41,9 +41,9 @@ export const levels: Level[] = [0, 1, 2].map((i) => {
       for (let xx = x; xx < x + w; xx++) grid[yy][xx] = false;
   };
   if (i === 0) {
-    for (let j = 0; j < 5; j++) {
-      add(1 + j * 4, 1, 2, 2, "house", j % 4);
-      if (j > 0) add(1, 1 + j * 4, 2, 2, "house", (j + 1) % 4);
+    for (let j = 0; j < 9; j++) {
+      add(1 + j * 2, 1, 2, 2, "house", j % 4);
+      if (j > 0) add(1, 1 + j * 2, 2, 2, "house", (j + 1) % 4);
     }
     add(8, 8, 1, 1, "well");
     add(13, 10, 1, 1, "bench");
@@ -55,6 +55,10 @@ export const levels: Level[] = [0, 1, 2].map((i) => {
       if (j > 0) add(1, 1 + j * 4, 2, 2, "autumntree", (j + 1) % 3);
     }
     // Include the stone apron in the solid footprint, not just the water.
+    for (let j = 0; j < 4; j++) {
+      add(3 + j * 4, 1, 2, 2, "rampart");
+      add(1, 3 + j * 4, 2, 2, "rampart");
+    }
     add(8, 8, 5, 5, "pond");
     add(6, 10, 1, 1, "bench");
     add(16, 10, 1, 1, "bench");
@@ -150,6 +154,12 @@ export const levels: Level[] = [0, 1, 2].map((i) => {
     powerups: [
       { pos: nearest({ x: 17, y: 11 }), kind: "speed" },
       { pos: nearest({ x: 5, y: 15 }), kind: "shield" },
+      ...(i === 1
+        ? [
+            { pos: nearest({ x: 5, y: 6 }), kind: "speed" as const },
+            { pos: nearest({ x: 15, y: 16 }), kind: "shield" as const },
+          ]
+        : []),
       ...(i === 2
         ? [
             { pos: nearest({ x: 7, y: 6 }), kind: "shield" as const },
