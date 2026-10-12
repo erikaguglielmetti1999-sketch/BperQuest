@@ -154,6 +154,12 @@ export const levels: Level[] = [0, 1, 2].map((i) => {
     powerups: [
       { pos: nearest({ x: 17, y: 11 }), kind: "speed" },
       { pos: nearest({ x: 5, y: 15 }), kind: "shield" },
+      ...(i === 1
+        ? [
+            { pos: nearest({ x: 5, y: 6 }), kind: "speed" as const },
+            { pos: nearest({ x: 15, y: 16 }), kind: "shield" as const },
+          ]
+        : []),
       ...(i === 2
         ? [
             { pos: nearest({ x: 7, y: 6 }), kind: "shield" as const },
