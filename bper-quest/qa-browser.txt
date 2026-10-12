@@ -1,0 +1,63 @@
+PASS Intro prima della partita
+PASS START: tre vite, zero oggetti, un mostro
+PASS Due tasti: una sola direzione
+PASS Collisione contro un ostacolo
+PASS Timer fermo in pausa
+PASS Velocità +30%
+PASS Velocità scade dopo sei secondi
+PASS Pedana +40%
+PASS Pedana scade dopo quattro secondi
+PASS Scudo attivato
+PASS Scudo assorbe un colpo
+PASS Invulnerabilità protegge dai colpi ripetuti
+PASS GAME OVER a zero vite
+PASS RIPROVA ripristina tutto
+PASS Un oggetto attivo
+PASS Percorso raggiungibile
+PASS Raccolta 1/10
+PASS Progressione dei mostri
+PASS Un oggetto attivo
+PASS Percorso raggiungibile
+PASS Raccolta 2/10
+PASS Progressione dei mostri
+PASS Un oggetto attivo
+PASS Percorso raggiungibile
+PASS Raccolta 3/10
+PASS Transizione a 3 e 6 oggetti
+PASS Nuova mappa; vite e tempo preservati
+PASS Numero corretto di mostri nella nuova mappa
+PASS Un oggetto attivo
+PASS Percorso raggiungibile
+PASS Raccolta 4/10
+PASS Progressione dei mostri
+PASS Un oggetto attivo
+PASS Percorso raggiungibile
+PASS Raccolta 5/10
+PASS Progressione dei mostri
+PASS Un oggetto attivo
+PASS Percorso raggiungibile
+PASS Raccolta 6/10
+PASS Transizione a 3 e 6 oggetti
+PASS Nuova mappa; vite e tempo preservati
+PASS Numero corretto di mostri nella nuova mappa
+PASS Un oggetto attivo
+PASS Percorso raggiungibile
+PASS Raccolta 7/10
+PASS Progressione dei mostri
+PASS Un oggetto attivo
+PASS Percorso raggiungibile
+PASS Raccolta 8/10
+PASS Progressione dei mostri
+PASS Un oggetto attivo
+PASS Percorso raggiungibile
+PASS Raccolta 9/10
+PASS Progressione dei mostri
+PASS Un oggetto attivo
+PASS Percorso raggiungibile
+PASS Raccolta 10/10
+PASS Vittoria dopo il decimo oggetto
+PASS Mostri separati durante il percorso completo
+PASS Camera fissa
+PASS Tempo finale fermo
+PASS PNG 1200×900 valido
+VERIFICA BROWSER SUPERATA
